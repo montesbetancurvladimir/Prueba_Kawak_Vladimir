@@ -39,6 +39,7 @@ final class DocumentController extends BaseController
     /**
      * @param array<string, string> $params
      */
+    // Pantalla principal: lista documentos y permite buscar por nombre o código.
     public function index(Request $request, array $params): Response
     {
         if ($r = $this->requireAuth()) {
@@ -57,6 +58,7 @@ final class DocumentController extends BaseController
     /**
      * @param array<string, string> $params
      */
+    // Muestra el formulario vacío para crear un documento nuevo.
     public function createForm(Request $request, array $params): Response
     {
         if ($r = $this->requireAuth()) {
@@ -75,6 +77,7 @@ final class DocumentController extends BaseController
     /**
      * @param array<string, string> $params
      */
+    // Recibe el formulario y crea el documento. Si hay error, vuelve a mostrar el form con el mensaje.
     public function create(Request $request, array $params): Response
     {
         if ($r = $this->requireAuth()) {
@@ -107,6 +110,7 @@ final class DocumentController extends BaseController
     /**
      * @param array<string, string> $params
      */
+    // Abre el formulario para editar un documento existente.
     public function editForm(Request $request, array $params): Response
     {
         if ($r = $this->requireAuth()) {
@@ -131,6 +135,7 @@ final class DocumentController extends BaseController
     /**
      * @param array<string, string> $params
      */
+    // Guarda los cambios del documento. Si cambias tipo/proceso, el código puede recalcularse.
     public function update(Request $request, array $params): Response
     {
         if ($r = $this->requireAuth()) {
@@ -170,6 +175,7 @@ final class DocumentController extends BaseController
     /**
      * @param array<string, string> $params
      */
+    // Elimina un documento por ID y vuelve al listado.
     public function delete(Request $request, array $params): Response
     {
         if ($r = $this->requireAuth()) {
